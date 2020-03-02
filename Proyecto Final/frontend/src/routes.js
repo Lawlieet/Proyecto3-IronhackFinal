@@ -12,6 +12,7 @@ import Login from './pages/login'
 import Publicar from './pages/publicar'
 import Config from './pages/config'
 
+import Trabajo from './pages/trabajo'
 
 // estas no
 import NotFound from './components/404/NotFound.js';
@@ -27,7 +28,8 @@ export default () => (
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/login" component={Login} />
       
-      
+      <Route exact path="/trabajos" component={Trabajo}/>
+
       <Route exact path="/config" component={Config} />
       <Route exact path="/publicar" component={Publicar} />
     

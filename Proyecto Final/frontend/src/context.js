@@ -38,7 +38,9 @@ class MyProvider extends Component {
   handleSignupSubmitServicio = async e => {
     e.preventDefault()
     const form = this.state.formServicio
+    console.log(form)
     this.setState({ formServicio: { description: '', direction: '', cedula: ''}})
+    
     return await AUTH_SERVICE.CREATE(form)
   }
 

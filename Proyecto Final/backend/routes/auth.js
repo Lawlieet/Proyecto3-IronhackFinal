@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require('../models/User');
 const Project = require('../models/Project');
 
+
 const passport = require('../config/passport');
 const uploadCloud = require('../config/cloudinary')
 
@@ -31,11 +32,21 @@ router.get('/profile', isAuth, (req, res, next) => {
     .catch((err) => res.status(500).json({ err }));
 });
 
-router.post('/publicar', isAuth, (req, res, next) => {
-  User.findById(req.user._id)
+router.post('/publicar', isAuth, async(req, res, next) => {
+  // console.log(req.user)
+  // console.log(req.body)
+  const {description, direction, cedula } = req.body
+  const { _id } = req.user
+  const proy = await Project.create( { direction,description, cedula , author:_id})
 
-    .then((user) => res.status(200).json({ user }))
-    .catch((err) => res.status(500).json({ err }));
+  return res.status(200).json( {user})
+  
+
+
+
+  // proy.create ( {description, direction, cedula }) 
+  //   .then((user) => res.status(200).json({ user }))
+  //   .catch((err) => res.status(500).json({ err }));
 });
 
 
@@ -104,6 +115,17 @@ router.delete('/project/:id', async(req, res, next) => {
   await Project.findByIdAndDelete(id)
   res.status(200).json({ message: "Project delete"})
 })
+
+
+
+/////Creacion de crud
+
+
+
+
+
+
+///Fianl del crud
 
 module.exports = router;
   function isAuth(req, res, next) {

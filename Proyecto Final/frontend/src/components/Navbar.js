@@ -54,6 +54,7 @@ function Navbar({ history }) {
                     <MenuItem  color="black" onClick={() => go('/')}>Inicio</MenuItem>
                     <MenuItem  color="black" onClick={() => go('/login')}>Inicia sesion</MenuItem>
                     <MenuItem  color="black" onClick={() => go('/signup')}>Registrate</MenuItem>
+                    
                   </>
                 )}
                 {context.state.isLogged && (
@@ -63,6 +64,7 @@ function Navbar({ history }) {
                     <MenuItem onClick={() => go('/config')}>Configuración</MenuItem>
                     <MenuItem onClick={() => go('/publicar')}>Públicar</MenuItem>
                     <MenuItem onClick={context.handleLogout}>Cerrar sesión</MenuItem>
+                    <MenuItem onClick={ () => go ('/trabajos')}>Trabajo</MenuItem>
                   </>
                 )}
               </MenuList>

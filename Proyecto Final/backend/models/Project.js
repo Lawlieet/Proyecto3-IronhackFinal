@@ -1,10 +1,10 @@
 const { Schema, model } = require('mongoose')
 const projectSchema = new Schema (
     {
-        imageURL: String,
+        imageURL: '',
         direction: String,
         description: String,
-        cedula: Number,
+        cedula: String,
         author: {
           type: Schema.Types.ObjectId,
           ref: 'User'
