@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/core'
 import { MyContext } from '../../context'
 import Form from '../../components/Form'
-
+//Pagina publicar pasara a ser la de la creacion de Trabajo
 
 function Publicar({ history }) {
   const toast = useToast()
@@ -75,7 +75,20 @@ function Publicar({ history }) {
                 <InputGroup>
                   <InputLeftAddon children={<Icon name="minus" />} />
                   <Input
-                    placeholder="DESCRIPCION"
+                    placeholder="Titulo"
+                    name="title"
+                    type="text"
+                    value={context.state.formServicio.title}                    
+                    onChange={context.handleSignupInputServicio}
+                  />
+                </InputGroup>
+              </FormControl>
+              <FormControl isRequired>
+                <InputGroup>
+                  <InputLeftAddon children={<Icon name="minus" />} />
+                  <Input
+                   
+                    placeholder="Descripcion"
                     name="description"
                     type="text"
                     value={context.state.formServicio.description}                    
@@ -87,23 +100,10 @@ function Publicar({ history }) {
                 <InputGroup>
                   <InputLeftAddon children={<Icon name="minus" />} />
                   <Input
-                   
-                    placeholder="DIRECCION"
-                    name="direction"
-                    type="text"
-                    value={context.state.formServicio.direction}                    
-                    onChange={context.handleSignupInputServicio}
-                  />
-                </InputGroup>
-              </FormControl>
-              <FormControl isRequired>
-                <InputGroup>
-                  <InputLeftAddon children={<Icon name="minus" />} />
-                  <Input
                     
                     placeholder="CEDULA"
                     name="cedula"
-                    type="number"
+                    type="text"
                     value={context.state.formServicio.cedula}
                     onChange={context.handleSignupInputServicio}
                   />

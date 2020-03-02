@@ -14,6 +14,7 @@ import Config from './pages/config'
 
 import Trabajo from './pages/trabajo'
 
+
 // estas no
 import NotFound from './components/404/NotFound.js';
 // estyas no
@@ -32,6 +33,9 @@ export default () => (
 
       <Route exact path="/config" component={Config} />
       <Route exact path="/publicar" component={Publicar} />
+
+
+
     
 
       <Route component={NotFound} />    

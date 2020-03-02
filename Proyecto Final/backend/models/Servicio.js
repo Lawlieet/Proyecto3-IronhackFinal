@@ -1,15 +1,15 @@
 const { Schema, model } = require('mongoose')
 
 
-const trabajoSchema = new Schema(
+const servicioSchema = new Schema(
   {
     title: String,
     description:String,
-    cedula:String,
-    servicios: {
+    trabajo: {
       type: Schema.Types.ObjectId,
-      ref: 'Servicio'
+      ref: 'Trabajo'
     },
+    photoURL: '',
   },
   {
     timestamps: true,
@@ -17,4 +17,4 @@ const trabajoSchema = new Schema(
   }
 )
 
-module.exports = model('Trabajo', trabajoSchema)
+module.exports = model('Servicio', servicioSchema)

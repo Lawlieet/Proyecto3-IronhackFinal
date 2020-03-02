@@ -7,7 +7,7 @@ export const MyContext = createContext()
 class MyProvider extends Component {
   state = {
     formServicio:{
-      description:'',
+      title:'',
       direction:'',
       cedula:''
     }
@@ -24,26 +24,22 @@ class MyProvider extends Component {
     loggedUser: null,
     isLogged: false
   }
-
-
-
-  
+//Envios de Servicios Cambiar a CrearTrabajo
   handleSignupInputServicio = e => {
     const { formServicio } = this.state
     const { name, value } = e.target
     formServicio[name] = value
     this.setState({ formServicio })
   }
-
   handleSignupSubmitServicio = async e => {
     e.preventDefault()
     const form = this.state.formServicio
     console.log(form)
-    this.setState({ formServicio: { description: '', direction: '', cedula: ''}})
+    this.setState({ formServicio: { title: '', direction: '', cedula: ''}})
     
     return await AUTH_SERVICE.CREATE(form)
   }
-
+//Envio de Servicios cambiar a crear trabajo
 //----------------------------
   handleLogout = async () => {
     await AUTH_SERVICE.LOGOUT()
