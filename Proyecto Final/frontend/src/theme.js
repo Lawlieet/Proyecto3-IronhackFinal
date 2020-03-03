@@ -1,4 +1,4 @@
- 
+ //Modificar los temaas finales
 import React from 'react'
 import { theme } from '@chakra-ui/core'
 const customIcons = {
