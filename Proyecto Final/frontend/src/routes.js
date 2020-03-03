@@ -13,7 +13,7 @@ import Publicar from './pages/publicar'
 import Config from './pages/config'
 
 import Trabajo from './pages/trabajo'
-
+import PublicarTrabajo from './pages/publicarTrabajo'
 
 // estas no
 import NotFound from './components/404/NotFound.js';
@@ -33,7 +33,8 @@ export default () => (
 
       <Route exact path="/config" component={Config} />
       <Route exact path="/publicar" component={Publicar} />
-
+      
+      <Route exact path="/publicarTrabajos" component={PublicarTrabajo} />
 
 
     

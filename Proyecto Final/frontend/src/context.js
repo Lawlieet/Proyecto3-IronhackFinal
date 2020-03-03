@@ -1,7 +1,9 @@
 import React, { createContext, Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import AUTH_SERVICE from './services/auth'
-import axios from 'axios'
+//import { createTrabajo } from "./services/trabajo" 
+import SERVICE_TRABAJO from './services/trabajo'
+
 export const MyContext = createContext()
 
 class MyProvider extends Component {
@@ -11,7 +13,11 @@ class MyProvider extends Component {
       direction:'',
       cedula:''
     }
-   ,
+   ,formTrabajo:{
+      title:'',
+      description:'',
+      cedula:''
+    },
     formSignup: {
       name: '',
       email: '',
@@ -24,6 +30,28 @@ class MyProvider extends Component {
     loggedUser: null,
     isLogged: false
   }
+
+//handleSignupInputTrabajo
+handleSignupInputTrabajo = e => {
+  const { formTrabajo } = this.state
+  const { name, value } = e.target
+  formTrabajo[name] = value
+  this.setState({ formTrabajo })
+}
+
+
+handleSignupSubmitTrabajo = async e => {
+  e.preventDefault()
+  const form = this.state.formTrabajo
+  console.log(form)
+  this.setState({ formTrabajo: { title: '', description: '', cedula: ''}})
+  
+  return await SERVICE_TRABAJO.CREATE(form)
+}
+
+//handleSignupInputTrabajo
+
+
 //Envios de Servicios Cambiar a CrearTrabajo
   handleSignupInputServicio = e => {
     const { formServicio } = this.state
@@ -115,7 +143,10 @@ class MyProvider extends Component {
       handleLoginSubmit,
       handleLogout,
       handleSignupSubmitServicio,
-    handleSignupInputServicio
+      handleSignupInputServicio,
+      
+      handleSignupInputTrabajo,
+      handleSignupSubmitTrabajo
     } = this
     return (
       <MyContext.Provider
@@ -127,7 +158,12 @@ class MyProvider extends Component {
           handleLoginSubmit,
           handleLogout,
           handleSignupSubmitServicio,
-          handleSignupInputServicio
+          handleSignupInputServicio,
+          
+          handleSignupInputTrabajo,
+          handleSignupSubmitTrabajo
+
+
       }}
       >
         {this.props.children}

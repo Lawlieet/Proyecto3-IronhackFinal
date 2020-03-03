@@ -27,18 +27,18 @@ const{
 
 
 // Project CRUD
-router.get("/api/trabajos", getAllTrabajos);
-router.post("/api/trabajos", createTrabajo);
-router.get("/api/trabajos/:id", getTrabajo);
-router.put("/api/trabajos/:id", updateTrabajo);
-router.delete("/api/trabajos/:id", deleteTrabajo);
+router.get("/trabajos", getAllTrabajos);
+router.post("/trabajos", createTrabajo);
+router.get("/trabajos/:id", getTrabajo);
+router.put("/trabajos/:id", updateTrabajo);
+router.delete("/trabajos/:id", deleteTrabajo);
 
 // Servicio CRUD
-router.get("/api/servicios", getAllServicios);
-router.post("/api/servicios/:trabajoId", createServicio);
-router.get("/api/servicios/:id", getServicio);
-router.put("/api/servicios/:id", updateServicio);
-router.delete("/api/servicios/:id", deleteServicio);
+router.get("/servicios", getAllServicios);
+router.post("/servicios/:trabajoId", createServicio);
+router.get("/servicios/:id", getServicio);
+router.put("/servicios/:id", updateServicio);
+router.delete("/servicios/:id", deleteServicio);
 
 
 
