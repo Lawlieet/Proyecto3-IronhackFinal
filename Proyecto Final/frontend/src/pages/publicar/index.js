@@ -96,19 +96,6 @@ function Publicar({ history }) {
                   />
                 </InputGroup>
               </FormControl>
-              <FormControl isRequired>
-                <InputGroup>
-                  <InputLeftAddon children={<Icon name="minus" />} />
-                  <Input
-                    
-                    placeholder="CEDULA"
-                    name="cedula"
-                    type="text"
-                    value={context.state.formServicio.cedula}
-                    onChange={context.handleSignupInputServicio}
-                  />
-                </InputGroup>
-              </FormControl>
             </Form>
           </Flex>
       </React.Fragment>

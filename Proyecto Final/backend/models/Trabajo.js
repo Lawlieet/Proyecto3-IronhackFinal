@@ -6,9 +6,9 @@ const trabajoSchema = new Schema(
     title: String,
     description:String,
     cedula:String,
-    servicios: {
+    author: {
       type: Schema.Types.ObjectId,
-      ref: 'Servicio'
+      ref: 'User'
     },
   },
   {

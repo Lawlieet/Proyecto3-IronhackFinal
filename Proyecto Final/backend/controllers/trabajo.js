@@ -1,4 +1,5 @@
 const Trabajo = require ("../models/Trabajo")
+const User  = require ("../models/User")
 const Servicio = require('../models/Servicio')
 
 
@@ -13,9 +14,11 @@ exports.getTrabajo = async (req, res) => {
     res.status(200).json(trabajo)
 }
 
-exports.createTrabajo = async (req,res) => {
+exports.createTrabajo = async (req,res, next) => {
     const { title, description, cedula } = req.body
-    await Trabajo.create( { title, description, cedula })
+    const { _id } = req.user
+    const trabajo = await Trabajo.create( { title, description, cedula,author: _id })
+    const user= await User.findByIdAndUpdate(_id,{$push:{trabajos:trabajo._id}},{new:true})
     res.status(201).json( {message: "Trabajo Creado"})
 } 
 

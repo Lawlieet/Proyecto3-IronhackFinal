@@ -5,6 +5,7 @@ const User = require('../models/User');
 const Project = require('../models/Project');
 
 
+
 const passport = require('../config/passport');
 const uploadCloud = require('../config/cloudinary')
 
@@ -27,7 +28,7 @@ router.get('/logout', (req, res, next) => {
 
 router.get('/profile', isAuth, (req, res, next) => {
   User.findById(req.user._id)
-
+    .populate('trabajos')
     .then((user) => res.status(200).json({ user }))
     .catch((err) => res.status(500).json({ err }));
 });
@@ -55,7 +56,7 @@ router.post('/publicar', isAuth, async(req, res, next) => {
 router.post(
   '/upload',
   isAuth,
-  uploadCloud.single('imageURL'),
+  uploadCloud.single('photoURL'),
   async (req, res, next) => {
     const { secure_url } = req.file
     const user = await User.findByIdAndUpdate(

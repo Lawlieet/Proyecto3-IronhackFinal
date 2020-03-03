@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{ useContext}from 'react'
 import {
   Stack,
   Heading,
@@ -10,10 +10,13 @@ import {
 } from '@chakra-ui/core'
 import { MyContext } from '../../context'
 import { Link } from 'react-router-dom'
+import TrabajoList from "../../components/TrabajoList"
 
 
 function Home({ history }) {
   const go = path => history.push(path)
+  const context = useContext(MyContext)
+  
   return (
     <MyContext.Consumer>
       {context => {
@@ -114,7 +117,8 @@ function Home({ history }) {
             Eres Increible Nunca Lo Olvides
           </Text>
         </Box>
-
+            <h1>Trabajos HOME </h1>
+            <TrabajoList/>
         
       </Stack>
     </React.Fragment>

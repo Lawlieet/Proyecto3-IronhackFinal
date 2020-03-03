@@ -22,9 +22,14 @@ const AUTH_SERVICE = {
     const { data } = await service.get('/logout')
     return data
   },
-  CREATE: async project => {
-    const { data } = await service.post('/publicar', project)
+  CREATE: async servicios => {
+    console.log(servicios)
+    const { data } = await service.post('/servicios/:trabajoId', servicios)
+    console.log(data)
     return data
+  },
+  uploadPhoto: async photo => {
+    return await service.post('/upload', photo)
   }
 }
 

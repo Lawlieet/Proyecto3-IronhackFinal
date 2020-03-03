@@ -4,14 +4,14 @@ import AUTH_SERVICE from './services/auth'
 //import { createTrabajo } from "./services/trabajo" 
 import SERVICE_TRABAJO from './services/trabajo'
 
+
 export const MyContext = createContext()
 
 class MyProvider extends Component {
   state = {
     formServicio:{
       title:'',
-      direction:'',
-      cedula:''
+      description:'',
     }
    ,formTrabajo:{
       title:'',
@@ -27,8 +27,11 @@ class MyProvider extends Component {
       email: '',
       password: ''
     },
+    feed:null,
     loggedUser: null,
-    isLogged: false
+    isLogged: false,
+    trabajos:[],
+    servicios:[]
   }
 
 //handleSignupInputTrabajo
@@ -43,7 +46,13 @@ handleSignupInputTrabajo = e => {
 handleSignupSubmitTrabajo = async e => {
   e.preventDefault()
   const form = this.state.formTrabajo
+  const trabajos = this.state.trabajos
+  const servicios = this.state.servicios
+  
   console.log(form)
+  console.log(trabajos)
+  console.log(servicios)
+  
   this.setState({ formTrabajo: { title: '', description: '', cedula: ''}})
   
   return await SERVICE_TRABAJO.CREATE(form)
@@ -63,7 +72,7 @@ handleSignupSubmitTrabajo = async e => {
     e.preventDefault()
     const form = this.state.formServicio
     console.log(form)
-    this.setState({ formServicio: { title: '', direction: '', cedula: ''}})
+    this.setState({ formServicio: { title: '', description: ''}})
     
     return await AUTH_SERVICE.CREATE(form)
   }
@@ -110,6 +119,26 @@ handleSignupSubmitTrabajo = async e => {
     this.setState({ formSignup: { name: '', email: '', password: ''}})
     return await AUTH_SERVICE.SIGNUP(form)
   }
+//Cambiar foto de perfil//
+
+uploadPhoto = e => {
+  const formPhoto = new FormData()
+  formPhoto.append('photoURL', e.target.files[0])
+  AUTH_SERVICE.uploadPhoto(formPhoto)
+    .then(({ data }) => {
+      this.setState({ loggedUser: data.user })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+
+
+//Fin Cambiar Foto de Perfil
+
+
+
 
 
 //
@@ -144,7 +173,7 @@ handleSignupSubmitTrabajo = async e => {
       handleLogout,
       handleSignupSubmitServicio,
       handleSignupInputServicio,
-      
+      uploadPhoto,
       handleSignupInputTrabajo,
       handleSignupSubmitTrabajo
     } = this
@@ -159,7 +188,7 @@ handleSignupSubmitTrabajo = async e => {
           handleLogout,
           handleSignupSubmitServicio,
           handleSignupInputServicio,
-          
+          uploadPhoto,
           handleSignupInputTrabajo,
           handleSignupSubmitTrabajo
 

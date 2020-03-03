@@ -9,7 +9,7 @@ import Profile from './pages/profile'
 import Signup from './pages/signup'
 import Login from './pages/login'
 
-import Publicar from './pages/publicar'
+import Servicio from './pages/publicar'
 import Config from './pages/config'
 
 import Trabajo from './pages/trabajo'
@@ -32,7 +32,7 @@ export default () => (
       <Route exact path="/trabajos" component={Trabajo}/>
 
       <Route exact path="/config" component={Config} />
-      <Route exact path="/publicar" component={Publicar} />
+      <Route exact path="/servicios" component={Servicio} />
       
       <Route exact path="/publicarTrabajos" component={PublicarTrabajo} />
 

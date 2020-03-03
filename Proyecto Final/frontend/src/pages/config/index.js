@@ -36,7 +36,7 @@ export default function Config({ history }) {
                   <Stack spacing={8} mt="5vh" mr="5vw" mb="3vh" ml="5vw" align="center">
                     <Box p={5} shadow="md" borderWidth="1px" flex="1" rounded="md">
                       <Text fontSize="md">Actualizar foto de perfil.</Text>
-                      <Input type="file" accept="image/*" multiple = {false} />
+                      <Input type="file"  onChange={context.uploadPhoto}  accept="image/*" name="photoURL" multiple = {false} />
                       <Box>
                         <Image
                         rounded="full"

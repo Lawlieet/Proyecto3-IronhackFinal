@@ -11,17 +11,18 @@ import React, { useEffect, useContext } from 'react'
 //   Icon,
 //   useToast
 // } from '@chakra-ui/core'
+
 import TrabajoDetail from '../../components/TrabajoDetail'
 
-
-function trabajo () {
+const  Trabajo  = props =>{
     return(
         <>
-            <TrabajoDetail> <h1>Hola</h1></TrabajoDetail>   
+            <h2>Trabajo detalles</h2>
+            <TrabajoDetail trabajoId= {props.match.params.trabajoId}></TrabajoDetail>   
            
         </>
 
     )
 }
 
-export default trabajo
+export default Trabajo
