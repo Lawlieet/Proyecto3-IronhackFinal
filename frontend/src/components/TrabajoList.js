@@ -51,7 +51,7 @@ class TrabajoList extends Component {
                      
                         
                         <Link to={`/trabajo/${trabajo._id}`}>{trabajo.title}</Link>
-                        <button onClick={() => this.deleteTrabajo(trabajo._id)}>╳</button>
+                        {/* <button onClick={() => this.deleteTrabajo(trabajo._id)}>╳</button> */}
                     
                     
                     </li>
