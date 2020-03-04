@@ -1,7 +1,9 @@
-import axios from 'axios'
-
-const baseURL = 'http://localhost:3000/projects'
-
+import axios from 'axios';
+let baseURL;
+process.env.NODE_ENV === 'production'
+  ? (baseURL = 'https://ihearyou.herokuapp.com/projects')
+  : (baseURL = 'http://localhost:3000/projects');
+  
 const MY_SERVICE = axios.create({
     baseURL,
     withCredentials: true
