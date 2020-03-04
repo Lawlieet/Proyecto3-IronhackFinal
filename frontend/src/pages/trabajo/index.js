@@ -28,13 +28,13 @@
 // export default Trabajo
 
 import React,{ useContext} from 'react'
-import { Stack, Box, Text, Image, Badge, Flex, Avatar } from '@chakra-ui/core'
+import { Stack,  Text,  Flex, } from '@chakra-ui/core'
 import {MyContext} from '../../context'
 import TrabajoDetail from '../../components/TrabajoDetail'
 const Trabajo = props =>{
     
     const context = useContext(MyContext)
-    console.log(context)
+    //console.log(context)
     const { loggedUser } = context.state
     return(
         <Stack

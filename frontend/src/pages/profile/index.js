@@ -2,12 +2,10 @@ import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../context'
 import CardProfile from '../../components/CardProfile'
 import { 
-  Flex,
-  Box,
-  Heading,
-  Stack
+  Flex
+
 } from '@chakra-ui/core'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 
 

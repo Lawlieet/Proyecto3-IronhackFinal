@@ -52,8 +52,8 @@ handleSignupSubmitTrabajo = async e => {
   const trabajos = this.state.trabajos
   
   
-  console.log(form)
-  console.log(trabajos)  
+  //console.log(form)
+  //console.log(trabajos)  
   this.setState({ formTrabajo: { title: '', description: '', cedula: ''}})
   
   return await SERVICE_TRABAJO.CREATE(form)

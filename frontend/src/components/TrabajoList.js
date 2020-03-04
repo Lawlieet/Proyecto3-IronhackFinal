@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import  SERVICE_TRABAJO from '../services/trabajo'
 import {deleteTrabajo} from '../services/Delete'
 // import CardProfile from '../components/CardProfile.js'
-import {Box, AccordionPanel,AccordionItem,AccordionIcon ,AccordionHeader,ListIcon,Heading,Text} from '@chakra-ui/core'
-import CardProfile from '../components/CardProfile'
+//import {Box, AccordionPanel,AccordionItem,AccordionIcon ,AccordionHeader,ListIcon,Heading,Text} from '@chakra-ui/core'
+//import CardProfile from '../components/CardProfile'
 
 
 class TrabajoList extends Component {

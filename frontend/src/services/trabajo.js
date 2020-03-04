@@ -8,7 +8,7 @@ const SERVICE_TRABAJO = {
 
     CREATE: async trabajo => {
         const { data } = await service.post("/",trabajo)
-        console.log("Creaste un trabajoperro")
+        //console.log("Creaste un trabajo")
         return data
     },
 
@@ -18,15 +18,15 @@ const SERVICE_TRABAJO = {
     },
     getAllTrabajos: async () =>{
         const { data } = await service.get()
-        console.log(data.trabajos, "Data Get all")
+        //console.log(data.trabajos, "Data Get all")
        
         return data
 
     },
     getTrabajo : async trabajoId =>{
         const{ data } = await service.get(`/${trabajoId}`)
-         console.log(data.trabajos, "Data getTrabajo")
-         console.log(trabajoId, "Data getTrabajo")
+        // console.log(data.trabajos, "Data getTrabajo")
+        // console.log(trabajoId, "Data getTrabajo")
          return data
     },
     updateTrabajo : async (id,title,description,cedula) => {

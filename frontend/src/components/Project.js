@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Stack, Box, Text, Image, Badge, Flex, Avatar } from '@chakra-ui/core'
+import { Stack, Box, Text, Image,  Flex, Avatar } from '@chakra-ui/core'
 import { MyContext } from '../context'
 
 export default function Project({ project }) {

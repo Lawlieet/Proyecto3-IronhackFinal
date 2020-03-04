@@ -1,8 +1,8 @@
 import React, {  Component } from 'react'
 import { withRouter } from "react-router-dom";
-import { Stack, Box, Text, Image, Badge, Flex, Avatar, SimpleGrid } from '@chakra-ui/core'
+import {  Box,  } from '@chakra-ui/core'
 //import { MyContext } from '../context'
-import SERVICE_TRABAJO from '../services/trabajo'
+//import SERVICE_TRABAJO from '../services/trabajo'---- Stack, Text, Image, Badge, Flex, Avatar, SimpleGrid
 import { getTrabajo ,updateTrabajo } from '../services/Delete'
 
 class TrabajoDetail extends Component {
@@ -17,7 +17,7 @@ class TrabajoDetail extends Component {
     }
     async getTrabajoInfo(){
         const  trabajo  = await getTrabajo(this.props.trabajoId)
-                    console.log(trabajo)
+                    //console.log(trabajo)
         this.setState({
             trabajo,
             title: trabajo.title,
@@ -27,8 +27,8 @@ class TrabajoDetail extends Component {
 
 
     async componentDidMount(){
-        console.log("Mount")   
-        console.log("**trabajos",this.state.trabajos)
+        //console.log("Mount")   
+        //console.log("**trabajos",this.state.trabajos)
         this.getTrabajoInfo()
 
         // SERVICE_TRABAJO.getAllTrabajos()
