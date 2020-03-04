@@ -11,15 +11,17 @@ exports.getAllTrabajos = async (req, res) => {
 exports.getTrabajo = async (req, res) => {
     const { id } = req.params;
     const trabajo =  await Trabajo.findById(id).populate('servicios')
+    //console.log(id)
     res.status(200).json(trabajo)
 }
 
 exports.createTrabajo = async (req,res, next) => {
     const { title, description, cedula } = req.body
-    const { _id } = req.user
-    const trabajo = await Trabajo.create( { title, description, cedula,author: _id })
-    const user= await User.findByIdAndUpdate(_id,{$push:{trabajos:trabajo._id}},{new:true})
+
+    const newTrabajo = await Trabajo.create( { title, description, cedula})
+    //const user= await User.findByIdAndUpdate(_id,{$push:{trabajos:trabajo.id}},{new:true})
     res.status(201).json( {message: "Trabajo Creado"})
+    
 } 
 
 exports.updateTrabajo = async (req, res) => {

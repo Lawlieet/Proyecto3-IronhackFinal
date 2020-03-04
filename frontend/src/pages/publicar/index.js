@@ -32,7 +32,7 @@ function Publicar({ history }) {
           duration: 9000,
           isClosable: true
         })
-        history.push('/publicar')
+        history.push('/servicios')
       })
       .catch(err => {
         toast({

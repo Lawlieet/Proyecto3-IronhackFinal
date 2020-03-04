@@ -18,13 +18,16 @@ const SERVICE_TRABAJO = {
     },
     getAllTrabajos: async () =>{
         const { data } = await service.get()
-        console.log(data, "Data Get all")
+        console.log(data.trabajos, "Data Get all")
+       
         return data
 
     },
     getTrabajo : async trabajoId =>{
         const{ data } = await service.get(`/${trabajoId}`)
-        return data
+         console.log(data.trabajos, "Data getTrabajo")
+         console.log(trabajoId, "Data getTrabajo")
+         return data
     },
     updateTrabajo : async (id,title,description,cedula) => {
         const { data } = await service.put(`/${id}`,{title,description,cedula})

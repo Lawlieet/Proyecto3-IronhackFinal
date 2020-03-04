@@ -12,7 +12,7 @@ const passport = require('./config/passport');
 
 //Para conectar tu base de datos a Atlas debes en el env.DB cambiarlo por la ruta que te indica Atlas
 mongoose
-  .connect("mongodb://localhost/proyecto", { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect("mongodb://localhost/proyecto", { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true })
   .then((x) => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
   .catch((err) => console.error('Error connecting to mongo', err));
 

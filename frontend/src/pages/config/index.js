@@ -7,7 +7,8 @@ import {
   Stack,
   Text,
   Input,
-  Image
+  Image,
+  Button
 } from '@chakra-ui/core'
 
 export default function Config({ history }) {
@@ -32,11 +33,12 @@ export default function Config({ history }) {
                 ml="5vw"
               >
                 <Box>
-                  <Heading mt="5vh">Configuración:</Heading>
+                  <Heading mt="5vh">Cambiar Foto de Perfil</Heading>
+                  <Text>La foto de Perfil debe ser tuya, en caso contrario tu cuenta sera dada de baja.</Text>
                   <Stack spacing={8} mt="5vh" mr="5vw" mb="3vh" ml="5vw" align="center">
                     <Box p={5} shadow="md" borderWidth="1px" flex="1" rounded="md">
                       <Text fontSize="md">Actualizar foto de perfil.</Text>
-                      <Input type="file"  onChange={context.uploadPhoto}  accept="image/*" name="photoURL" multiple = {false} />
+                      <Button type="file" to="/perfil" onChange={context.uploadPhoto}  accept="image/*" name="photoURL" multiple = {false} ></Button>
                       <Box>
                         <Image
                         rounded="full"

@@ -7,7 +7,8 @@ import {
   MenuList,
   MenuItem,
   Text,
-  IconButton
+  IconButton,
+  Box
 } from '@chakra-ui/core'
 import { MyContext } from '../context'
 import { Link } from 'react-router-dom'
@@ -18,6 +19,9 @@ function Navbar({ history }) {
     <MyContext.Consumer>
       {context => {
         return (
+
+          <Box w="100vw">
+
           <Flex
             pos="fixed"
             top={0}
@@ -64,13 +68,14 @@ function Navbar({ history }) {
                     <MenuItem onClick={ () => go ('/trabajos')}>Trabajo</MenuItem>
                     <MenuItem onClick={() => go('/servicios')}>Crear un Servicio</MenuItem>
                     <MenuItem onClick={() => go('/publicarTrabajos')}>Públicar Trabajo</MenuItem>
-                    <MenuItem onClick={() => go('/config')}>Configuración</MenuItem>
+                    <MenuItem onClick={() => go('/config')}>Cambiar Foto de Perfil</MenuItem>
                     <MenuItem onClick={context.handleLogout}>Cerrar sesión</MenuItem>
                   </>
                 )}
               </MenuList>
             </Menu>
           </Flex>
+          </Box>
         )
       }}
     </MyContext.Consumer>

@@ -1,6 +1,7 @@
- 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
+const passport = require('../config/passport');
+const uploadCloud = require('../config/cloudinary')
 
 router.get('/', (req, res, next) => {
   res.status(200).json({ msg: 'Working ONLINE' })
@@ -35,7 +36,7 @@ router.delete("/trabajos/:id", deleteTrabajo);
 
 // Servicio CRUD
 router.get("/servicios", getAllServicios);
-router.post("/servicios/:trabajoId", createServicio);
+router.post("/servicios/:trabajo", createServicio);
 router.get("/servicios/:id", getServicio);
 router.put("/servicios/:id", updateServicio);
 router.delete("/servicios/:id", deleteServicio);

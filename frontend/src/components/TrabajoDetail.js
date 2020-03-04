@@ -1,23 +1,23 @@
-import React, { useContext, Component } from 'react'
+import React, {  Component } from 'react'
 import { withRouter } from "react-router-dom";
 import { Stack, Box, Text, Image, Badge, Flex, Avatar, SimpleGrid } from '@chakra-ui/core'
-import { MyContext } from '../context'
+//import { MyContext } from '../context'
 import SERVICE_TRABAJO from '../services/trabajo'
-import trabajo from '../pages/trabajo'
-import { Link } from "react-router-dom";
+import { getTrabajo ,updateTrabajo } from '../services/Delete'
 
 class TrabajoDetail extends Component {
 
     state = {
+        trabajos:{},
         trabajo:{},
         title:"",
         description:"",
-        edit:false
+        edit:false,      
+        
     }
-
-
     async getTrabajoInfo(){
-        const  trabajo  = await SERVICE_TRABAJO.getTrabajo(this.props.trabajoId)
+        const  trabajo  = await getTrabajo(this.props.trabajoId)
+                    console.log(trabajo)
         this.setState({
             trabajo,
             title: trabajo.title,
@@ -27,7 +27,8 @@ class TrabajoDetail extends Component {
 
 
     async componentDidMount(){
-        console.log("Mount")  
+        console.log("Mount")   
+        console.log("**trabajos",this.state.trabajos)
         this.getTrabajoInfo()
 
         // SERVICE_TRABAJO.getAllTrabajos()
@@ -52,8 +53,9 @@ class TrabajoDetail extends Component {
 
     submit = async e =>{
         e.preventDefault()
-        await SERVICE_TRABAJO.updateTrabajo(
+        await updateTrabajo(
             this.props.trabajoId,
+            this.state.trabajos,
             this.state.title,
             this.state.description
         )
@@ -66,10 +68,17 @@ class TrabajoDetail extends Component {
 
     render(){
         return(
+
+
         <>
-            
-            <h1>Hello{this.state.trabajo.title}</h1>
-            <p>{this.state.trabajo.description}</p>
+        <div>
+         <Box bg="tomato" w="100%" p={4} color="black">
+           <Box bg="tomato" w="100%" p={4} color="black">
+          <Box bg="tomato" w="100%" p={4} color="black">
+
+    
+          <h1>{this.state.trabajos.title}</h1>
+          <p>{this.state.trabajos.description}</p>
         
             <button onClick={this.switchEditForm}>Edit Project</button>
         {this.state.edit && (
@@ -101,9 +110,10 @@ class TrabajoDetail extends Component {
             </div>
           </form>
         )}
-
-
-
+</Box>
+          </Box>
+</Box>
+</div>
         </>
         )
     }

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import AUTH_SERVICE from './services/auth'
 //import { createTrabajo } from "./services/trabajo" 
 import SERVICE_TRABAJO from './services/trabajo'
-
+import SERVICE_SERVICIO from './services/servicio'
 
 export const MyContext = createContext()
 
@@ -31,7 +31,10 @@ class MyProvider extends Component {
     loggedUser: null,
     isLogged: false,
     trabajos:[],
-    servicios:[]
+    servicios:[],
+    
+    
+    
   }
 
 //handleSignupInputTrabajo
@@ -47,19 +50,15 @@ handleSignupSubmitTrabajo = async e => {
   e.preventDefault()
   const form = this.state.formTrabajo
   const trabajos = this.state.trabajos
-  const servicios = this.state.servicios
+  
   
   console.log(form)
-  console.log(trabajos)
-  console.log(servicios)
-  
+  console.log(trabajos)  
   this.setState({ formTrabajo: { title: '', description: '', cedula: ''}})
   
   return await SERVICE_TRABAJO.CREATE(form)
 }
-
 //handleSignupInputTrabajo
-
 
 //Envios de Servicios Cambiar a CrearTrabajo
   handleSignupInputServicio = e => {
@@ -74,10 +73,13 @@ handleSignupSubmitTrabajo = async e => {
     console.log(form)
     this.setState({ formServicio: { title: '', description: ''}})
     
-    return await AUTH_SERVICE.CREATE(form)
+    return await SERVICE_SERVICIO.CREATE(form)
   }
 //Envio de Servicios cambiar a crear trabajo
 //----------------------------
+
+
+
   handleLogout = async () => {
     await AUTH_SERVICE.LOGOUT()
     this.props.history.push('/')
@@ -186,8 +188,10 @@ uploadPhoto = e => {
           handleLoginInput,
           handleLoginSubmit,
           handleLogout,
+
           handleSignupSubmitServicio,
           handleSignupInputServicio,
+
           uploadPhoto,
           handleSignupInputTrabajo,
           handleSignupSubmitTrabajo

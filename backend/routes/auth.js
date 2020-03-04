@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('../config/passport');
+const uploadCloud = require('../config/cloudinary')
 
 const User = require('../models/User');
 const Project = require('../models/Project');
 
 
 
-const passport = require('../config/passport');
-const uploadCloud = require('../config/cloudinary')
+
 
 
 router.post('/signup', (req, res, next) => {
@@ -36,9 +37,9 @@ router.get('/profile', isAuth, (req, res, next) => {
 router.post('/publicar', isAuth, async(req, res, next) => {
   // console.log(req.user)
   // console.log(req.body)
-  const {description, direction, cedula } = req.body
+  const {description, title } = req.body
   const { _id } = req.user
-  const proy = await Project.create( { direction,description, cedula , author:_id})
+  const proy = await Project.create( { title,description , trabajo:_id})
 
   return res.status(200).json( {user})
   
