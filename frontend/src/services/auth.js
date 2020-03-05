@@ -20,9 +20,7 @@ const AUTH_SERVICE = {
     return data
   },
   CREATE: async servicios => {
-    //console.log(servicios)
     const { data } = await service.post('/servicios/:trabajoId', servicios)
-    //console.log(data)
     return data
   },
   uploadPhoto: async photo => {
