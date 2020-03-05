@@ -24,16 +24,27 @@ Este proyecto surge debido a que cuando era joven falleció mi mejor amiga en un
 Recuerda que debes de descargar el repo y posteriormente ingresar a las carpetas y desde terminar correr el comando **npm i** o **npm install** para descargar los node_modulos, de Igual forma **recuerda agregar las variables de entorno** o **.env** con los siguientes nombres:
 *
 PORT=
+
 ENV=
+
 FRONTENDPOINT=http://localhost:3001
+
 SECRET=
+
 GMAIL_USERNAME=
+
 GMAIL_PASSWORD=
+
 DB=
+
 CLOUDINARY_NAME=
+
 CLOUDINARY_KEY=
+
 CLOUDINARY_SECRET=
+
 *
+
 Aquí tienes el Link para poder visitar la app [ I HEAR YOU](https://trusting-lichterman-396eec.netlify.com/)
 
 ## Agradecimientos
