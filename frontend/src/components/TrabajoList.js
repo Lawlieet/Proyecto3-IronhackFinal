@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import  SERVICE_TRABAJO from '../services/trabajo'
 import {deleteTrabajo} from '../services/Delete'
 // import CardProfile from '../components/CardProfile.js'
 //import {Box, AccordionPanel,AccordionItem,AccordionIcon ,AccordionHeader,ListIcon,Heading,Text} from '@chakra-ui/core'
 //import CardProfile from '../components/CardProfile'
+
+import {
+    AccordionItem,
+    AccordionHeader,
+    AccordionPanel,
+    AccordionIcon,
+    Box
+  } from "@chakra-ui/core";
 
 
 class TrabajoList extends Component {
@@ -41,24 +48,27 @@ class TrabajoList extends Component {
 
     render(){
         return(
-           
-            <ul> 
+           <Box mt="75px" >
+            
              
                 {this.state.trabajos.map((trabajo, idx) =>(
                 
-                    
-                    <li  key={idx}   _expanded={{ bg: "#48BB78", color: "black" }}>
-                     
-                        
-                        <Link to={`/trabajo/${trabajo._id}`}>{trabajo.title}</Link>
-                        {/* <button onClick={() => this.deleteTrabajo(trabajo._id)}>╳</button> */}
-                    
-                    
-                    </li>
-                   
+                    <AccordionItem>
+                    <AccordionHeader _hover={{ bg: "green.200" }} _expanded={{ bg: "green.200", color: "black" }}>
+    <Box flex="1" textAlign="left"  key={idx}>
+    {trabajo.title}
+    </Box>
+    <AccordionIcon />
+  </AccordionHeader>
+                    <AccordionPanel   _expanded={{ bg: "#48BB78", color: "black" }}>                                             
+                       <h2> {trabajo.description} </h2>  
+                        {/* <button onClick={() => this.deleteTrabajo(trabajo._id)}>╳</button> */}                                        
+                     </AccordionPanel>
+                    </AccordionItem>
                 ) )}
 
-            </ul>
+        
+            </Box>
         )
     }
 

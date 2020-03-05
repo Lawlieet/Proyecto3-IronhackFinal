@@ -65,8 +65,8 @@ function Navbar({ history }) {
                   <>
                     <MenuItem onClick={() => go('/')}>Inicio</MenuItem>
                     <MenuItem onClick={() => go('/profile')}>Perfil</MenuItem>
-                    <MenuItem onClick={ () => go ('/trabajos')}>Trabajo</MenuItem>
-                    <MenuItem onClick={() => go('/servicios')}>Crear un Servicio</MenuItem>
+                    {/* <MenuItem onClick={ () => go ('/trabajos')}>Trabajo</MenuItem>
+                    <MenuItem onClick={() => go('/servicios')}>Crear un Servicio</MenuItem> */}
                     <MenuItem onClick={() => go('/publicarTrabajos')}>Públicar Trabajo</MenuItem>
                     <MenuItem onClick={() => go('/config')}>Cambiar Foto de Perfil</MenuItem>
                     <MenuItem onClick={context.handleLogout}>Cerrar sesión</MenuItem>

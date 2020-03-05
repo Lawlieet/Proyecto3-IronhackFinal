@@ -7,7 +7,6 @@ import theme from './theme'
 import * as serviceWorker from './serviceWorker'
 import Routes from './routes'
 
-
 ReactDOM.render(
   <BrowserRouter>
     <ThemeProvider theme={theme}>

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Stack, Heading, Box, Image,Text,Flex,Grid } from '@chakra-ui/core'
+import { Stack, Heading, Box, Image,Flex } from '@chakra-ui/core'
 import TrabajoList from './TrabajoList'
 import{ Link} from 'react-router-dom'
 
-export default function CardProfile({ trabajos, user, history }) {
+export default function CardProfile({  user }) {
   return (
   
   <Box

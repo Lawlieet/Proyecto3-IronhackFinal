@@ -18,7 +18,7 @@ export default function Config({ history }) {
   return (
     <MyContext.Consumer>
       {context => {
-        const { isLogged, loggedUser } = context.state
+        const { isLogged } = context.state
         if (isLogged)
           return (
             <React.Fragment>

@@ -30,7 +30,6 @@ class MyProvider extends Component {
     feed:null,
     loggedUser: null,
     isLogged: false,
-    trabajos:[],
     servicios:[],
     
     
@@ -50,6 +49,7 @@ handleSignupSubmitTrabajo = async e => {
   e.preventDefault()
   const form = this.state.formTrabajo
   const trabajos = this.state.trabajos
+  //console.log(trabajos)
   
   
   //console.log(form)

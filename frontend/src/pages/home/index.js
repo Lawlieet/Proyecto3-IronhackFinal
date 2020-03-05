@@ -1,4 +1,4 @@
-import React ,{ useContext, useReducer}from 'react'
+import React ,{ useContext}from 'react'
 import {
   Stack,
   Heading,
@@ -6,12 +6,10 @@ import {
   Button,
   Text,
   Flex,
-  Image,List, ListItem, ListIcon
+  Image
 } from '@chakra-ui/core'
 import { MyContext } from '../../context'
 import { Link } from 'react-router-dom'
-import TrabajoList from '../../components/TrabajoList'
-
 
 function Home({ history,user }) {
   const go = path => history.push(path)
@@ -41,13 +39,24 @@ function Home({ history,user }) {
               <>
                 <Stack w="100vw"   align="center">
                     <Box    p={5} shadow="md" borderWidth="1px"  rounded="md">
-                      <Heading mb={1} size="sm" textAlign="center" align="center" >Te sientes deprimido, triste o con algun problma, busca algun especialista que te pueda ayudar</Heading>
+                      <Heading mb={1} size="sm" textAlign="center" align="center" >Te sientes deprimido, triste o con algun problema, busca algun especialista que te pueda ayudar</Heading>
 
                       <Button  _hover={{ bg: "green.200" }}                
                           size="sm" color="white" backgroundColor="#444" mt="24px" onClick={() => go('/signup')}>
                         Registrate
 
                       </Button>
+
+                      <Heading mb={1} size="sm" textAlign="center" align="center"> o </Heading>
+
+
+                      <Button  _hover={{ bg: "green.200" }}                
+                          size="sm" color="white" backgroundColor="#444"  onClick={() => go('/ayuda')}>
+                        Busca Ayuda Directa 
+
+                      </Button>
+
+
 
                     </Box>
                 </Stack>
@@ -104,7 +113,7 @@ function Home({ history,user }) {
         
           <Heading 
             mt="4%"
-            fontSize="xl"
+            fontSize="2xl" 
           >¿Para que Sirve?</Heading>
            <Heading 
             mt="4vh"
@@ -113,25 +122,27 @@ function Home({ history,user }) {
           </Flex>
         </Box>
 
-        <Stack w="100vw"  mt="3%" align="center">
-        <Flex  textAlign="center" w="80vw" flexDirection="column" bg="#999" alignContent="cennter">
+        <Stack w="100vw"  mt="1%" align="center">
+        <Flex  textAlign="center" w="80vw" flexDirection="column" bg="#626C6D" alignContent="cennter">
         
-          <Text mt="2%" color="#2D3748" > 
+          <Text mt="1%" color="#000" > 
           Te ah pasado que en ocaciones no sabes que hacer con tus problemas ya sea personales, familiares o que estas pasando por un mal momento y no tienes a quien acudir?
           </Text>
-          <Text mt="2%" color="#2D3748" >  
+          <Text mt="2%" color="#000" >  
           I Hear You es una aplicación sin fines de lucro en la cual encontraras algun especialista el cual pueda atenderte o asesorarte, ya sea personalmente o via telefonica.
 
           </Text>
-          <Text mt="2%" > 
+          <Text mt="2%" color="#000"  fontSize="5xl"> 
             Eres Increible Nunca Lo Olvides
           </Text>
           </Flex>
         </Stack>
 
-            <h1>Trabajos HOME </h1>
-                <TrabajoList/>
-
+        <Button  _hover={{ bg: "green.200" }}                
+          size="sm" color="white" backgroundColor="#444" mt="10px" onClick={() => go('/allTrabajos')}>
+              Ir a los trabajos Disponibles
+        </Button>
+            
      
 
 
