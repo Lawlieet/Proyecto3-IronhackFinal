@@ -28,6 +28,7 @@ export default function Config({ history, user }) {
                 direction="column"
                 w="100vw"
                 minH="100vh"
+
                 wrap="wrap"
                 ml="5vw"
                 mt="2vh"
@@ -40,7 +41,7 @@ export default function Config({ history, user }) {
                   <Text>La foto de Perfil debe ser tuya, en caso contrario tu cuenta sera dada de baja.</Text>
                   <Stack spacing={8} mt="5vh" mr="5vw" mb="5vh" ml="5vw" align="center">
                     <Box p={5} shadow="md" borderWidth="1px" flex="1" rounded="md">
-                      <Text fontSize="md">Actualizar foto de perfil.</Text>
+                      <Text fontSize="md">Actualizar foto de perfil</Text>
                       <Input type="file"  onChange={context.uploadPhoto}  accept="image/*" name="photoURL" multiple = {false} />
                       <Box>
                         <Image
