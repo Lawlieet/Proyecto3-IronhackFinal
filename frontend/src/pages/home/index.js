@@ -31,15 +31,15 @@ function Home({ history,user }) {
           textAlign="center"
         
           _hover={{ bg: "green.200" }}
-          backgroundColor="#E6F0F2"
+          //backgroundColor="#E6F0F2"
           variant="outline"
           align="center"
         >
-          <Flex textAlign="center" isInline spacing={10} align="center">
+          <Flex textAlign="center" mt="2%" isInline spacing={10} align="center">
             <Box textAlign="center"  align="center" >
               {!context.state.isLogged && (
               <>
-                <Stack   spacing={8} mt="3vh"  mb="5vh"  align="center">
+                <Stack w="100vw"   align="center">
                     <Box    p={5} shadow="md" borderWidth="1px"  rounded="md">
                       <Heading mb={1} size="sm" textAlign="center" align="center" >Te sientes deprimido, triste o con algun problma, busca algun especialista que te pueda ayudar</Heading>
 
@@ -55,7 +55,7 @@ function Home({ history,user }) {
               )}
               {context.state.isLogged && (
               <Button  _hover={{ bg: "green.200" }}
-                size="sm" color="white" mt="24px" backgroundColor="#444" onClick={() => go('/profile')}>
+                size="sm" color="white" mt="2%" backgroundColor="#444" onClick={() => go('/profile')}>
                 Ir al perfil
               </Button>
               )}
@@ -66,13 +66,12 @@ function Home({ history,user }) {
  
           {context.state.isLogged && (
             <>
-            <Box textAlign={[ 'left', 'center' ]}>
+            <Stack  mt="2%" align="center">
         <Heading
-          mt="5vh"
-          ml="5vw"
-          size="sm">¿Que deseas realizar?</Heading>
-        </Box>
-          <Stack spacing={8} mt="5vh" mr="5vw" mb="3vh" w="90vw" ml="5vw" align="center">
+         
+          size="sm">Real</Heading>
+        </Stack>
+          <Stack w="100vw"  mt="2%" align="center">
           <Box p={5} shadow="md" borderWidth="1px" flex="1" rounded="md">
             <Heading fontSize="md" as={Link} to='/publicarTrabajos'>Publicar Trabajo</Heading>
           </Box>
@@ -87,24 +86,24 @@ function Home({ history,user }) {
           w="100vw"
           alignItems="center"
         >
-        <Box  mt="8%" align="center">
+        <Stack  mt="2%" align="center">
           
-          <Flex   bg="#999" alignContent="cennter">
+          <Flex  alignContent="cennter">
           <Image 
-            size="300px"
+            size="240px"
             bg="#FFF"
             src="https://stickershop.line-scdn.net/stickershop/v1/product/4863808/LINEStorePC/main.png;compress=true"
             alt="help"
             
           />
           </Flex>
-          </Box>
+          </Stack>
 
-          <Box  mt="8%" align="center">
-          <Flex  flexDirection="column" bg="#999" alignContent="cennter">
+          <Box  mt="2%" align="center">
+          <Flex  flexDirection="column" alignContent="cennter">
         
           <Heading 
-            mt="4vh"
+            mt="4%"
             fontSize="xl"
           >¿Para que Sirve?</Heading>
            <Heading 
@@ -114,23 +113,22 @@ function Home({ history,user }) {
           </Flex>
         </Box>
 
-        <Box w="100vw" mr="1vw" mt="8%" align="center">
-        <Flex  w="80vw" flexDirection="column" bg="#999" alignContent="cennter">
+        <Stack w="100vw"  mt="3%" align="center">
+        <Flex  textAlign="center" w="80vw" flexDirection="column" bg="#999" alignContent="cennter">
         
-          <Text mt="3vh" color="#2D3748" > 
+          <Text mt="2%" color="#2D3748" > 
           Te ah pasado que en ocaciones no sabes que hacer con tus problemas ya sea personales, familiares o que estas pasando por un mal momento y no tienes a quien acudir?
           </Text>
-          <Text mt="3vh" color="#2D3748" >  
+          <Text mt="2%" color="#2D3748" >  
           I Hear You es una aplicación sin fines de lucro en la cual encontraras algun especialista el cual pueda atenderte o asesorarte, ya sea personalmente o via telefonica.
 
           </Text>
-          <Text mt="3vh" color="#2D3748"> 
+          <Text mt="2%" > 
             Eres Increible Nunca Lo Olvides
           </Text>
           </Flex>
-        </Box>
+        </Stack>
 
-            { user}
             <h1>Trabajos HOME </h1>
                 <TrabajoList/>
 
