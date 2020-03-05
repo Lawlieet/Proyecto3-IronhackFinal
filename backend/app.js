@@ -24,7 +24,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000', process.env.FRONTENDPOINT]
+    origin: ['http://localhost:3000','https://practical-khorana-d56092.netlify.com/', process.env.FRONTENDPOINT]
   })
 );
 
