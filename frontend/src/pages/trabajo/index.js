@@ -10,8 +10,8 @@ import {
     return (
       <>
       <Box >
-      <TrabajoList/>
-</Box>
+        <TrabajoList/>
+      </Box>
       </>
     );
   }

@@ -11,7 +11,6 @@ exports.getAllTrabajos = async (req, res) => {
 exports.getTrabajo = async (req, res) => {
     const { id } = req.params;
     const trabajo =  await Trabajo.findById(id).populate('servicios')
-    //console.log(id)
     res.status(200).json(trabajo)
 }
 

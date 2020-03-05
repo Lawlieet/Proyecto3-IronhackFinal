@@ -4,9 +4,6 @@ process.env.NODE_ENV === 'production'
   ? (baseURL = 'https://ihearyou.herokuapp.com')
   : (baseURL = 'http://localhost:3000');
 
-
-
-
 const service = axios.create({ withCredentials: true, baseURL });
 
 const AUTH_SERVICE = {

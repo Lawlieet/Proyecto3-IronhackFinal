@@ -4,12 +4,10 @@ process.env.NODE_ENV === 'production'
   ? (baseURL = 'https://ihearyou.herokuapp.com/trabajos')
   : (baseURL = 'http://localhost:3000/trabajos');
 
-
 const projectsService = axios.create({
   withCredentials: true,
     baseURL
   });
-  
 
   export const updateTrabajo = async (id, title, description) => {
     const { data } = await projectsService.put(`/${id}`, { title, description });

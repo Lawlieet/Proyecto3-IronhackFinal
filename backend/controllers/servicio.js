@@ -13,24 +13,14 @@ exports.getServicio = async (req, res) => {
     const { _id } = req.params;
 
     const servicio =  await Servicio.findById(_id)
-        //console.log(req.params)
-        //console.log("Esto es el ID", _id)
     res.status(200).json(servicio)
 }
 
 exports.createServicio = async (req,res) => {
     const { trabajoId } =req.params
-    //console.log("->",trabajoId)
-    //console.log("reqparams",req.params)
     const { title, description } = req.body
     const newServicio = await Servicio.create({trabajo:trabajoId,title, description})
     await Servicio.findOneAndUpdate(trabajoId,{ $push: {servicio:newServicio._id}  } )
-    //console.log("Estos esel crear servicio",req.params)
-    //console.log("req user",req.user)
-    //console.log("Estos esel crear servicio trabajoId",trabajoId)
-   
-
-
     res.status(201).json( {message: "Servicio Creado"})
 } 
 

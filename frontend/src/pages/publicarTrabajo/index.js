@@ -13,7 +13,6 @@ import {
 } from '@chakra-ui/core'
 import { MyContext } from '../../context'
 import Form from '../../components/Form'
-//Pagina publicar pasara a ser la de la creacion de Trabajo
 
 function PublicarTrabajo({ history }) {
   const toast = useToast()

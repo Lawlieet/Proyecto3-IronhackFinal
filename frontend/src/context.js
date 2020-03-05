@@ -1,7 +1,6 @@
 import React, { createContext, Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import AUTH_SERVICE from './services/auth'
-//import { createTrabajo } from "./services/trabajo" 
 import SERVICE_TRABAJO from './services/trabajo'
 import SERVICE_SERVICIO from './services/servicio'
 
@@ -49,11 +48,7 @@ handleSignupSubmitTrabajo = async e => {
   e.preventDefault()
   const form = this.state.formTrabajo
   const trabajos = this.state.trabajos
-  //console.log(trabajos)
-  
-  
-  //console.log(form)
-  //console.log(trabajos)  
+
   this.setState({ formTrabajo: { title: '', description: '', cedula: ''}})
   
   return await SERVICE_TRABAJO.CREATE(form)
@@ -78,52 +73,35 @@ handleSignupSubmitTrabajo = async e => {
 //Envio de Servicios cambiar a crear trabajo
 //----------------------------
 
-
-
   handleLogout = async () => {
     await AUTH_SERVICE.LOGOUT()
     this.props.history.push('/')
     this.setState({ loggedUser: null, isLogged: false })
   }
-  //Esta función destructura de el estado la form para poder acceder a
-  //a sus key value pairs.
-  //Destructuramos la key y su valor de element y con . target lo 
-  //obtenemos.
-  //A formSignUp en su llave name le damos el valor que pasa en value del
-  //e.target
-  //Se actualiza el estado al final.
+  //Actualizar el valor del inout al escribir
   handleSignupInput = e => {
     const { formSignup } = this.state
     const { name, value } = e.target
     formSignup[name] = value
     this.setState({ formSignup })
   }
-  //Esta función destructura de el estado la form para poder acceder a
-  //a sus key value pairs.
-  //Destructuramos la key y su valor de element y con . target lo 
-  //obtenemos.
-  //A formLogin en su llave name le damos el valor que pasa en value del
-  //e.target
-  //Se actualiza el estado al final.
+  //Actualizar el valor del inout al escribir
   handleLoginInput = e => {
     const { formLogin } = this.state
     const { name, value } = e.target
     formLogin[name] = value
     this.setState({ formLogin })
   }
-  //La funcion asincrona recibe un evento; lo primero que hace es evitar la recarga 
-  //de pagina con preventDefault. En seguida en una constante llamada form guardamos 
-  //el state que actualizamos en la funcion handleSignUpInput. Despues limpiamos la informacion del signup
-  //para terminar pasamos nuestra constante form a AUTH_SERVICE para mandar esa info al servidor. 
+  //Envio del formulario de registro
   handleSignupSubmit = async e => {
     e.preventDefault()
     const form = this.state.formSignup
     this.setState({ formSignup: { name: '', email: '', password: ''}})
     return await AUTH_SERVICE.SIGNUP(form)
   }
-//Cambiar foto de perfil//
 
-uploadPhoto = e => {
+  //Cambiar foto de perfil//
+  uploadPhoto = e => {
   const formPhoto = new FormData()
   formPhoto.append('photoURL', e.target.files[0])
   AUTH_SERVICE.uploadPhoto(formPhoto)
@@ -135,15 +113,7 @@ uploadPhoto = e => {
     })
 }
 
-
-
-//Fin Cambiar Foto de Perfil
-
-
-
-
-
-//
+//Regitro deusuario
   handleLoginSubmit = e => {
     e.preventDefault()
     const form = this.state.formLogin

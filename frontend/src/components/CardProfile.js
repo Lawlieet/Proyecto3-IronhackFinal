@@ -12,15 +12,9 @@ export default function CardProfile({  user }) {
   > 
     
       <Stack align="center" spacing={6} mt="2vh" mr="2vw" mb="3vh" ml="2vw">
-        <Heading as="h2" size="xl">Me da gusto verte :D</Heading>
+        <Heading as="h2" size="xl">Me da gusto verte</Heading>
        
         <Heading as="h3" size="lg"> {user.name} </Heading>
-        {/* {console.log("User",user)} 
-         <Heading as="h3" size="lg"> {user._id} </Heading>
-        */}
-        {/* {console.log("trabajos",trabajos,"nada")} */}
-        {/* <p>{user._id}</p> */}
-        
         <Image
           rounded="full"
           backgroundColor="black"
@@ -39,8 +33,11 @@ export default function CardProfile({  user }) {
               <Box p={5} shadow="md"  flex="1" rounded="md" borderWidth="1px" as={Link} to='/publicarTrabajos'>
                 <Heading fontSize="md">Brinda un Servicio</Heading>
               </Box>
+              <Box p={5} shadow="md"  flex="1" rounded="md" borderWidth="1px">
+                <Heading fontSize="md">Trabajos Actuales</Heading>
+             
 
-                <TrabajoList/>
+                <TrabajoList/> </Box>
             </Stack>
           </Box>
         

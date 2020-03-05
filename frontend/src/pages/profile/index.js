@@ -1,11 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../context'
 import CardProfile from '../../components/CardProfile'
-import { 
-  Flex
-
-} from '@chakra-ui/core'
-//import { Link } from 'react-router-dom'
+import { Flex } from '@chakra-ui/core'
 
 
 
@@ -34,7 +30,6 @@ export default function Profile({ history }) {
                
               </Flex>
               
-
 
             </React.Fragment>
           )

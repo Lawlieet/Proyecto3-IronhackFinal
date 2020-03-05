@@ -29,7 +29,6 @@ function Home({ history,user }) {
           textAlign="center"
         
           _hover={{ bg: "green.200" }}
-          //backgroundColor="#E6F0F2"
           variant="outline"
           align="center"
         >
@@ -78,7 +77,7 @@ function Home({ history,user }) {
             <Stack  mt="2%" align="center">
         <Heading
          
-          size="sm">Real</Heading>
+          size="sm">o</Heading>
         </Stack>
           <Stack w="100vw"  mt="2%" align="center">
           <Box p={5} shadow="md" borderWidth="1px" flex="1" rounded="md">

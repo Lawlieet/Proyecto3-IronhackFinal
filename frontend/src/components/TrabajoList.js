@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import  SERVICE_TRABAJO from '../services/trabajo'
 import {deleteTrabajo} from '../services/Delete'
-// import CardProfile from '../components/CardProfile.js'
-//import {Box, AccordionPanel,AccordionItem,AccordionIcon ,AccordionHeader,ListIcon,Heading,Text} from '@chakra-ui/core'
-//import CardProfile from '../components/CardProfile'
 
 import {
     AccordionItem,
@@ -39,12 +36,7 @@ class TrabajoList extends Component {
 
 
      breakpoints = ["30em", "48em", "62em", "80em"];
-// aliases
 
-    // async SERVICE_TRABAJO.DELETE (projectId) {
-    //     await SERVICE_TRABAJO(projectId);
-    //     this.getProjectsInfo();
-    //   }
 
     render(){
         return(
@@ -53,9 +45,9 @@ class TrabajoList extends Component {
              
                 {this.state.trabajos.map((trabajo, idx) =>(
                 
-                    <AccordionItem>
-                    <AccordionHeader _hover={{ bg: "green.200" }} _expanded={{ bg: "green.200", color: "black" }}>
-    <Box flex="1" textAlign="left"  key={idx}>
+                    <AccordionItem key={idx}>
+                    <AccordionHeader  _hover={{ bg: "green.200" }} _expanded={{ bg: "green.200", color: "black" }}>
+    <Box flex="1" textAlign="left"  >
     {trabajo.title}
     </Box>
     <AccordionIcon />
